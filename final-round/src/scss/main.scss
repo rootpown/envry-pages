@@ -1,0 +1,10 @@
+@import 'mixins';
+@import 'fonts';
+@import 'vendor';
+@import 'vars';
+@import 'settings';
+@import './scss-components/header';
+
+.wrapper {
+  font-family: $ttlr;
+}

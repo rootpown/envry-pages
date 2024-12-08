@@ -1,0 +1,30 @@
+// h-body
+.service-header {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  background-color: $white;
+}
+.header_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.header_information_left {
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+}
+.liner_group {
+  background-color: $soft-gray-color;
+  width: 2px;
+  height: 32px;
+  border-radius: 10px;
+}
+.header_information_right {
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+}
+.style-visible {
+  @include visually-hidden;
+}
