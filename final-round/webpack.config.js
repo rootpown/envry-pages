@@ -35,7 +35,6 @@ const optimization = () => {
               ['gifsicle', { interlaced: true }],
               ['jpegtran', { progressive: true }],
               ['optipng', { optimizationLevel: 5 }],
-              // Svgo configuration here https://github.com/svg/svgo#configuration
               [
                 'svgo',
                 {
@@ -76,10 +75,6 @@ const plugins = () => {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        {
-          from: path.resolve(__dirname, 'src/components/'),
-          to: path.resolve(__dirname, 'app/components/'),
-        },
         {
           from: path.resolve(__dirname, 'src/assets'),
           to: path.resolve(__dirname, 'app/assets'),

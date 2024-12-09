@@ -53,3 +53,11 @@
     display: block;
   }
 }
+@media (min-width: 1440px) {
+  .service-header {
+    display: none;
+  }
+}
+#burger {
+  @include burger;
+}

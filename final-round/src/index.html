@@ -5,15 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <title>new site</title>
-    <script src="./js/NativeComponents.js" defer></script>
   </head>
   <body>
-    <div id="root" data-folder="./components" data-modules="[./js/main.js]">
-      <embed data-component="Header" />
+    <div class="wrapper">
+      <header class="service-header">
+        <div class="header_row">
+          <div class="header_information_left">
+            <img id="burger" src="assets/img/burger.svg" alt="burger" />
+            <div class="liner_group style-visible"></div>
+            <img src="assets/img/Group.svg" alt="Group" />
+          </div>
+          <div class="header_information_right">
+            <img class="style-visible" src="assets/img/call.svg" alt="call" />
+            <img class="style-visible" src="assets/img/chat.svg" alt="chat" />
+            <img
+              class="style-visible"
+              src="assets/img/checkstatus.svg"
+              alt="checkstatus"
+            />
+            <div class="liner_group"></div>
+            <img src="assets/img/repair.svg" alt="repair" />
+            <img src="assets/img/checkstatus.svg" alt="checkout" />
+            <!--
+              show model in 768px
+            -->
+          </div>
+        </div>
+      </header>
+      <aside class="aside">
+        <div class="aside_block_rows">
+          <div class="aside_header">
+            <div class="aside_block_photos_left">
+              <button>
+                <img src="assets/img/back.svg" alt="back" />
+              </button>
+              <img src="assets/img/Group.svg" alt="" />
+            </div>
+            <div class="aside_block_photos_right"></div>
+          </div>
+          <div class="aside_block_list"></div>
+          <div class="aside_block_footer"></div>
+        </div>
+      </aside>
     </div>
-    <!-- <div class="wrapper">
-
-      <nav class="navigator_main"></nav>
-    </div> -->
   </body>
 </html>
