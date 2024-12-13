@@ -1,0 +1,126 @@
+// header block
+
+.aisde-container {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+@keyframes myAnim {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.aside_block_row {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  height: 100vh;
+  max-width: 320px;
+  flex-grow: 1;
+  -webkit-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+  -moz-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+  box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+  .aside_block_start {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0 2rem 0;
+    flex-grow: 0;
+
+    > .aside_block_start_left {
+      display: flex;
+      gap: 1rem;
+
+      & > .hideElements {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .aside_block_start_right {
+      padding-right: 20px;
+    }
+  }
+  .aside_block_list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+
+    position: relative;
+    > .aside__block__row {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-weight: bold;
+      position: relative;
+
+      > li {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        position: relative;
+      }
+      & > li:hover::before {
+        content: '';
+        background-color: #41f6d7;
+        width: 4px;
+        height: 32px;
+        border-radius: 10px;
+        position: absolute;
+        top: -5px;
+        left: -16px;
+      }
+      & > li:nth-child(1) {
+        color: #7e7e82;
+      }
+    }
+  }
+
+  .aside_block__footer {
+    display: flex;
+    flex-grow: 1;
+    padding-top: 1vh;
+    & > .aside_block_footer_list {
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+
+      & > .footer_list__start {
+        display: flex;
+        gap: 5%;
+      }
+      & > .footer_list__information {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-weight: 700;
+
+        & > p:nth-child(2) {
+          font-weight: bold;
+          font-family: $ttlb;
+          font-size: 20px;
+        }
+      }
+      & > .footer_list_button {
+        display: flex;
+        gap: 1rem;
+        & > button {
+          background-color: #fff;
+          border: none;
+          font-family: $ttlm;
+          font-size: 18px;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+// main block

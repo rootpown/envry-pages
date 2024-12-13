@@ -1,0 +1,81 @@
+.main_library {
+  padding: 1rem 0 1rem 0;
+
+  > .main_library_row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    > .main_library_header {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 2vh;
+      position: relative;
+      font-family: $ttlm;
+      font-size: 16px;
+
+      > .main_library_block_show {
+        display: none;
+        align-items: center;
+        gap: 1rem;
+        > a {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-family: $ttlm;
+          font-weight: 600;
+        }
+        > a:nth-child(1)::before {
+          content: 'Оставить заявку';
+        }
+        > a:nth-child(2)::before {
+          content: 'Статус ремонта';
+        }
+      }
+      > h1::before {
+        content: '';
+        background-color: #41f6d7;
+        width: 4px;
+        height: 40px;
+        position: absolute;
+        left: -13px;
+        border-radius: 15px;
+      }
+    }
+  }
+  .main_library_list {
+    .main_block_list {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      gap: 2rem;
+      overflow: scroll;
+      > li {
+        opacity: 0.7;
+        width: 230px;
+      }
+      > li:nth-child(1) {
+        text-align: center;
+        border: 3px solid #b8ffec;
+        background: #fff;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 7px;
+        opacity: 0.7;
+      }
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+}
+@media (min-width: 1120px) {
+  .main_library
+    > .main_library_row
+    > .main_library_header
+    > .main_library_block_show {
+    display: flex;
+  }
+  .main_block_list {
+    flex-wrap: wrap;
+  }
+}

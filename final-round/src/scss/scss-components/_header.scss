@@ -4,6 +4,11 @@
   padding-bottom: 1vh;
   background-color: $white;
   transition: all 1s;
+  position: relative;
+  z-index: 1;
+  box-shadow: -1px 3px 0px -1px rgba(217, 255, 245, 1);
+  -webkit-box-shadow: -1px 3px 0px -1px rgba(217, 255, 245, 1);
+  -moz-box-shadow: -1px 3px 0px -1px rgba(217, 255, 245, 1);
 }
 .header_row {
   display: flex;
@@ -57,7 +62,4 @@
   .service-header {
     display: none;
   }
-}
-#burger {
-  @include burger;
 }

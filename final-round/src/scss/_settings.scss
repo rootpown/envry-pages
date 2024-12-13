@@ -2,12 +2,6 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 *:focus {
   outline: 2px solid transparent;
 }
