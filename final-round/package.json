@@ -38,7 +38,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
-    "focus-visible": "^5.2.0",
+    "focus-visible": "^5.2.1",
     "normalize.css": "^8.0.1",
     "swiper": "^11.1.15"
   }
