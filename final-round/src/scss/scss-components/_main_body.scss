@@ -1,6 +1,7 @@
 .main_body {
   display: flex;
   justify-content: center;
+  padding-bottom: 4.3vh;
   &__row {
     display: flex;
     align-items: center;
@@ -14,8 +15,35 @@
   &__text_information {
     p {
       max-width: 490px;
-      letter-spacing: 0.2;
       line-height: 20px;
+    }
+    > p:nth-child(1) {
+      padding-bottom: 1rem;
+    }
+  }
+  &__toggle-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+    p,
+    span {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      p {
+        display: block;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -24,6 +52,8 @@
     padding: 1.5vh;
     & > a {
       display: flex;
+      align-items: center;
+      cursor: pointer;
       gap: 1rem;
       font-family: $ttlm;
       font-weight: 500;
@@ -34,5 +64,11 @@
       width: 530px;
       border-radius: 2%;
     }
+  }
+  #rotates {
+    transition: transform 0.3s ease-in-out;
+  }
+  .rotate {
+    transform: rotate(180deg);
   }
 }
