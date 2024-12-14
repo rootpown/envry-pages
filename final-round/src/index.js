@@ -12,6 +12,13 @@ function initSwiper() {
       pagination: {
         el: '.swiper-pagination',
       },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
     });
   }
   if (!isSmallScreen && swiper) {
@@ -24,6 +31,35 @@ function initSwiper() {
   }
 }
 initSwiper();
+window.addEventListener('resize', () => {
+  initSwiper();
+  if (swiper) {
+    swiper.update();
+  }
+});
+function checkingElements() {
+  const block = document.querySelectorAll('.block');
+  const block__list = document.querySelectorAll('.block__list');
+  const showElement = document.querySelector('.icons');
+  const toggleDisplay = (elements) => {
+    elements.forEach((element) => {
+      element.style.display =
+        element.style.display === 'none' || element.style.display === ''
+          ? 'block'
+          : 'none';
+    });
+  };
+
+  showElement.addEventListener('click', () => {
+    const resolution = window.innerWidth;
+    toggleDisplay(block__list);
+    if (resolution < 1024) {
+      toggleDisplay(block);
+    }
+  });
+}
+
+checkingElements();
 
 const hideElements = document.querySelector('.hideElements');
 const elementBurger = document.getElementById('burger');
