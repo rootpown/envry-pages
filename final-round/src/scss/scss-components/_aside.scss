@@ -1,13 +1,14 @@
-// header block
-
 .aisde-container {
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: 100;
   top: 0;
   left: 0;
   background-color: #fff;
   animation: myAnim 0.5s ease 0s 1 normal forwards;
+  -webkit-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+  -moz-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+  box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
 }
 @keyframes myAnim {
   0% {
@@ -24,9 +25,7 @@
   height: 100vh;
   max-width: 320px;
   flex-grow: 1;
-  -webkit-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
-  -moz-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
-  box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+
   .aside_block_start {
     display: flex;
     align-items: center;

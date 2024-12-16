@@ -14,6 +14,7 @@ const isProd = !isDev;
 
 const filename = (ext) =>
   isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+
 const optimization = () => {
   const configObj = {
     splitChunks: {
@@ -29,8 +30,6 @@ const optimization = () => {
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminMinify,
           options: {
-            // Lossless optimization with custom option
-            // Feel free to experiment with options for better result for you
             plugins: [
               ['gifsicle', { interlaced: true }],
               ['jpegtran', { progressive: true }],
@@ -82,12 +81,12 @@ const plugins = () => {
       ],
     }),
   ];
+
   return basePlugins;
 };
 
 module.exports = {
-
-  mode: 'development',
+  mode: isDev ? 'development' : 'production',
   context: path.resolve(__dirname, 'src'),
   entry: './js/main.js',
   output: {
@@ -100,7 +99,7 @@ module.exports = {
     historyApiFallback: true,
     open: true,
     compress: true,
-    hot: true,
+    hot: true, // Включение HMR для DevServer
     port: 5000,
   },
   optimization: optimization(),
@@ -116,10 +115,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-            },
+            loader: MiniCssExtractPlugin.loader, // Убрана настройка hmr
           },
           'css-loader',
         ],
