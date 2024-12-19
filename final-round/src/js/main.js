@@ -5,37 +5,111 @@ import '../index.js';
 import Swiper from 'swiper/bundle';
 
 import 'swiper/css/bundle';
+// let swiper;
+// function initSwiper() {
+//   const widthStatus = window.innerWidth < 768;
+//   if (!swiper == widthStatus) {
+//     swiper = new Swiper('.swiper', {
+//       // Optional parameters
+//       slidesPerView: 'auto',
+//       spaceBetween: 10,
+//       direction: 'horizontal',
+//       breakpoints: {
+//         768: {
+//           enabled: false,
+//         },
+//       },
+//       centeredSlides: true,
+//       loop: true,
+//       pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//       },
+//     });
+//   }
+// }
+// initSwiper();
 
 let swiper;
-let checkWindow = window.innerWidth < 768;
-
 function initSwiper() {
-  swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 'auto',
-    centeredSlides: true,
+  const isSmallScreen = window.innerWidth < 768;
+  if (isSmallScreen && !swiper) {
+    swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
 
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  });
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  }
+  // if (!isSmallScreen && swiper) {
+  //   swiper.destroy(true, true);
+  //   swiper = null;
+  //   const swiperWrapper = document.querySelector('.swiper-wrapper');
+  //   if (swiperWrapper) {
+  //     swiperWrapper.style.transform = '';
+  //   }
 }
 
 initSwiper();
-function elementBar() {
-  const hideElements = document.querySelector('.hideElements');
-  const showContentAside = document.querySelector('.aisde-container');
 
-  const elementBurger = document.getElementById('burger');
+// let swiper;
+// function enableSwiper() {
+//   const isSmallScreen = window.innerWidth < 768;
+//   if (isSmallScreen && !swiper) {
+//     swiper = new Swiper('.swiper', {
+//       direction: 'horizontal',
 
-  elementBurger.addEventListener('click', () => {
-    showContentAside.style.display = 'block';
-  });
+//       loop: true,
+//       slidesPerView: 'auto',
+//       spaceBetween: 20,
+//       pagination: {
+//         el: '.swiper-pagination',
+//       },
+//       navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//       scrollbar: {
+//         el: '.swiper-scrollbar',
+//       },
+//     });
+//   }
+//   if (!isSmallScreen && swiper) {
+//     swiper.destroy(true, true);
+//     swiper = null;
+//     const swiperWrapper = document.querySelector('.swiper-wrapper');
+//     if (swiperWrapper) {
+//       swiperWrapper.style.transform = '';
+//     }
+//   }
+// }
 
-  hideElements.addEventListener('click', () => {
-    showContentAside.style.display = 'none';
-  });
-}
+// function disableSwiper() {
+//   if (swiper) {
+//     swiper.destroy(true, true);
+//     swiper = null;
+//   }
+// }
+// function toggleSwiper() {
+//   const screenWidth = window.innerWidth;
 
-elementBar();
+//   if (screenWidth < 768 && !swiper) {
+//     // Включаем свайпер на мобильных устройствах
+//     enableSwiper();
+//   } else if (screenWidth >= 768 && swiper) {
+//     // Отключаем свайпер на десктопе
+//     disableSwiper();
+//   }
+// }
+// toggleSwiper();
