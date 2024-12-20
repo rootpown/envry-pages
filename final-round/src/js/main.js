@@ -5,111 +5,31 @@ import '../index.js';
 import Swiper from 'swiper/bundle';
 
 import 'swiper/css/bundle';
-// let swiper;
-// function initSwiper() {
-//   const widthStatus = window.innerWidth < 768;
-//   if (!swiper == widthStatus) {
-//     swiper = new Swiper('.swiper', {
-//       // Optional parameters
-//       slidesPerView: 'auto',
-//       spaceBetween: 10,
-//       direction: 'horizontal',
-//       breakpoints: {
-//         768: {
-//           enabled: false,
-//         },
-//       },
-//       centeredSlides: true,
-//       loop: true,
-//       pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//       },
-//     });
-//   }
-// }
-// initSwiper();
 
-let swiper;
-function initSwiper() {
-  const isSmallScreen = window.innerWidth < 768;
-  if (isSmallScreen && !swiper) {
-    swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-
-      loop: true,
-      slidesPerView: 'auto',
+let swipers = [];
+let statusWidht = window.innerWidth < 768;
+function initSwiper(className, breakpoints) {
+  const elements = document.querySelectorAll(className);
+  elements.forEach((element) => {
+    const swiper = new Swiper(element, {
+      breakpoints: breakpoints,
+      slidesPerView: 1,
       spaceBetween: 20,
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
     });
-  }
-  // if (!isSmallScreen && swiper) {
-  //   swiper.destroy(true, true);
-  //   swiper = null;
-  //   const swiperWrapper = document.querySelector('.swiper-wrapper');
-  //   if (swiperWrapper) {
-  //     swiperWrapper.style.transform = '';
-  //   }
+    if (!className >= statusWidht) {
+      swipers.destroy(true, true);
+    }
+    swipers.push(swiper);
+  });
+
+  console.log(swipers);
 }
-
-initSwiper();
-
-// let swiper;
-// function enableSwiper() {
-//   const isSmallScreen = window.innerWidth < 768;
-//   if (isSmallScreen && !swiper) {
-//     swiper = new Swiper('.swiper', {
-//       direction: 'horizontal',
-
-//       loop: true,
-//       slidesPerView: 'auto',
-//       spaceBetween: 20,
-//       pagination: {
-//         el: '.swiper-pagination',
-//       },
-//       navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//       },
-//       scrollbar: {
-//         el: '.swiper-scrollbar',
-//       },
-//     });
-//   }
-//   if (!isSmallScreen && swiper) {
-//     swiper.destroy(true, true);
-//     swiper = null;
-//     const swiperWrapper = document.querySelector('.swiper-wrapper');
-//     if (swiperWrapper) {
-//       swiperWrapper.style.transform = '';
-//     }
-//   }
-// }
-
-// function disableSwiper() {
-//   if (swiper) {
-//     swiper.destroy(true, true);
-//     swiper = null;
-//   }
-// }
-// function toggleSwiper() {
-//   const screenWidth = window.innerWidth;
-
-//   if (screenWidth < 768 && !swiper) {
-//     // Включаем свайпер на мобильных устройствах
-//     enableSwiper();
-//   } else if (screenWidth >= 768 && swiper) {
-//     // Отключаем свайпер на десктопе
-//     disableSwiper();
-//   }
-// }
-// toggleSwiper();
+const breakpoints = {
+  500: {
+    slidesPerView: 2,
+  },
+  768: {
+    slidesPerView: 3,
+  },
+};
+initSwiper('.swiper', breakpoints);
