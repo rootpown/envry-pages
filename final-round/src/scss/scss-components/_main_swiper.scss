@@ -17,22 +17,23 @@
   }
   &_swiper {
     display: flex;
+    // justify-content: center;
+    // max-width: 100%;
   }
   &_row {
-    width: 100%;
-
-    gap: 1rem;
-    @media (min-width: 730px) {
+    @media (min-width: 768px) {
+      flex-wrap: wrap;
+      gap: 0.6rem;
     }
   }
   &_style {
+    width: auto;
     display: flex;
+    gap: 2rem;
     justify-content: center;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 
-    @media (min-width: 730px) {
-      gap: 2rem;
-      background-color: red;
-    }
     > .btn {
       border: 3px solid #eaeaea;
       display: flex;

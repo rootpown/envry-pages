@@ -7,22 +7,28 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 let swipers = [];
-let statusWidht = window.innerWidth < 768;
+let statusWidth = window.innerWidth > 768;
+
 function initSwiper(className, breakpoints) {
   const elements = document.querySelectorAll(className);
-  elements.forEach((element) => {
-    const swiper = new Swiper(element, {
-      breakpoints: breakpoints,
-      slidesPerView: 1,
-      spaceBetween: 20,
-    });
-    if (!className >= statusWidht) {
-      swipers.destroy(true, true);
+  elements.forEach((element, index) => {
+    if (statusWidth) {
+      if (swipers[index]) {
+        swipers[index].destroy(true, true); // Уничтожаем Swiper, если он существует
+        swipers[index] = null; // Удаляем из массива
+      }
+    } else {
+      if (!swipers[index]) {
+        const swiper = new Swiper(element, {
+          breakpoints: breakpoints,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          updateOnWindowResize: true,
+        });
+        swipers[index] = swiper;
+      }
     }
-    swipers.push(swiper);
   });
-
-  console.log(swipers);
 }
 const breakpoints = {
   500: {
@@ -32,4 +38,16 @@ const breakpoints = {
     slidesPerView: 3,
   },
 };
+
+window.addEventListener('resize', () => {
+  statusWidth = window.innerWidth > 768;
+  initSwiper('.swiper', breakpoints);
+  swipers.forEach((swiper) => {
+    if (swiper) {
+      swiper.slideTo(0, 0, false);
+      swiper.update();
+    }
+  });
+});
+
 initSwiper('.swiper', breakpoints);
