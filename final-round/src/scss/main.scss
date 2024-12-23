@@ -13,3 +13,46 @@
   padding-left: 1.4vh;
   font-family: $ttlr;
 }
+.swiper-pagination-bullet {
+  background-color: #aeaeae;
+}
+.swiper-pagination-bullet-active {
+  background-color: #b5b6bc;
+}
+.swiper-pagination {
+  position: relative;
+  padding: 2rem 0;
+  width: 100%;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.tqs_block_button {
+  display: none;
+  padding: 1rem 0;
+  > button {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    font-size: 19px;
+    border: 0;
+    font-weight: 600;
+    background-color: #fcfcfc;
+  }
+  > button:before {
+    content: url(../assets/swiper/icon.svg);
+    background-size: contain;
+  }
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  &__style {
+  }
+}
+
+.active {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
