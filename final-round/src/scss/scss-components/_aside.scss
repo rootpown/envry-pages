@@ -1,6 +1,7 @@
 .aisde-container {
   display: none;
   position: fixed;
+  width: 320px;
   z-index: 100;
   top: 0;
   left: 0;
@@ -9,6 +10,10 @@
   -webkit-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
   -moz-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
   box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
+
+  @media (min-width: 330px) {
+    width: 360px;
+  }
 }
 @keyframes myAnim {
   0% {
@@ -41,6 +46,10 @@
       & > .hideElements {
         display: flex;
         align-items: center;
+
+        @media (min-width: 1120px) {
+          display: none;
+        }
       }
     }
     .aside_block_start_right {
@@ -121,5 +130,3 @@
     }
   }
 }
-
-// main block

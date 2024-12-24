@@ -37,7 +37,6 @@ function initSwiper(className, breakpoints) {
 const breakpoints = {
   500: {
     slidesPerView: 2,
-    spaceBetween: 40,
   },
   768: {
     slidesPerView: 3,
@@ -60,13 +59,21 @@ initSwiper('.swiper', breakpoints);
 function initContent() {
   const buttons = document.querySelectorAll('.tqs_block_button');
   const elementBlocks = document.querySelectorAll('.tqs_block_style');
+  const burger = document.getElementById('burger');
+  const asideBarStatus = document.querySelector('.aisde-container');
+  const hideBurger = document.querySelector('.hideElements');
+  burger.addEventListener('click', () => {
+    asideBarStatus.classList.add('showContent');
+  });
+  hideBurger.addEventListener('click', () => {
+    asideBarStatus.classList.remove('showContent');
+  });
 
   elementBlocks.forEach((block, index) => {
     if (index >= elementBlocks.length - 4) {
       block.classList.add('hidden');
     }
   });
-
   buttons.forEach((button, buttonIndex) => {
     button.addEventListener('click', () => {
       const swiperContainer = button

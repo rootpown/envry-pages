@@ -9,6 +9,9 @@
 @import './scss-components/main_body';
 @import './scss-components/main_swiper';
 
+img {
+  max-width: auto;
+}
 .wrapper-main {
   padding-left: 1.4vh;
   font-family: $ttlr;
@@ -40,14 +43,12 @@
     font-weight: 600;
     background-color: #fcfcfc;
   }
-  > button:before {
-    content: url(../assets/swiper/icon.svg);
-    background-size: contain;
-  }
   @media (min-width: 768px) {
     display: flex;
   }
-  &__style {
+
+  .tqs_block_button__style::before {
+    content: url(../assets/swiper/icon.svg);
   }
 }
 
@@ -55,4 +56,27 @@
   border: 1px solid black;
   width: 40px;
   height: 40px;
+}
+
+.aisde-container {
+  display: none; // Изначально скрыт
+  &.showContent {
+    display: block; // Показать элемент
+  }
+
+  @media (min-width: 1120px) {
+    display: block;
+    position: relative;
+
+    .hideElements {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1120px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+  }
 }
