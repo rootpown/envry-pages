@@ -1,6 +1,6 @@
 .tqs_block {
   &_header {
-    padding: 1.3rem 0;
+    padding: 3.3rem 0;
     background: rgb(248, 248, 248);
     background: linear-gradient(
       90deg,
@@ -16,7 +16,6 @@
     }
   }
   &_swiper {
-    max-width: 1120px;
     display: flex;
     flex-direction: column;
   }
@@ -25,6 +24,8 @@
       flex-wrap: wrap;
       gap: 0.6rem;
     }
+    max-width: 1320px;
+    margin: 0 auto;
   }
 
   &_style {
@@ -107,6 +108,7 @@
         font-size: 15px;
       }
       > .button-price {
+        margin-left: 50px;
         display: flex;
         align-items: center;
         position: absolute;
@@ -121,6 +123,61 @@
         font-weight: bold;
         font-size: $ttlr;
         font-size: 14px;
+      }
+    }
+  }
+
+  &_table {
+    display: none;
+    background-color: #fff;
+    padding: 0.4rem;
+    border-radius: 1rem;
+    @media (min-width: 768px) {
+      display: block;
+    }
+    &__row {
+      width: 100%;
+      padding: 1rem 0.2rem;
+
+      .button-price {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 0;
+        background-color: #ff3e79;
+        color: #fff;
+        padding: 0.2rem 0.7rem;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+      > thead {
+        text-align: left;
+        opacity: 0.7;
+        th {
+          padding: 1rem 0rem;
+        }
+        th:nth-child(1) {
+          width: 40%;
+        }
+        th:nth-child(2) {
+          width: 20%;
+        }
+        th:nth-child(3) {
+          width: 20%;
+        }
+      }
+      > tbody {
+        padding: 1rem;
+        th:nth-child(1) {
+          width: 40%;
+          text-align: left;
+          padding: 1rem 0rem;
+        }
+        td {
+          width: 20%;
+        }
       }
     }
   }

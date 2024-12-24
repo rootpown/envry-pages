@@ -33,7 +33,9 @@ img {
 
 .tqs_block_button {
   display: none;
-  padding: 1rem 0;
+  padding: 2rem 0;
+  max-width: 1330px;
+  margin: 0 auto;
   > button {
     display: flex;
     justify-content: space-around;
