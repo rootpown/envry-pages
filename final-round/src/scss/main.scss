@@ -8,7 +8,7 @@
 @import './scss-components/main-title';
 @import './scss-components/main_body';
 @import './scss-components/main_swiper';
-
+@import './scss-components/modal_feedback';
 img {
   max-width: auto;
 }
@@ -30,7 +30,6 @@ img {
     display: none;
   }
 }
-
 .tqs_block_button {
   display: none;
   padding: 2rem 0;
@@ -53,19 +52,16 @@ img {
     content: url(../assets/swiper/icon.svg);
   }
 }
-
 .active {
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
-
 .aisde-container {
-  display: none; // Изначально скрыт
+  display: none;
   &.showContent {
-    display: block; // Показать элемент
+    display: block;
   }
-
   @media (min-width: 1120px) {
     display: block;
     position: relative;
@@ -80,5 +76,37 @@ img {
   .wrapper {
     display: grid;
     grid-template-columns: 360px 1fr;
+  }
+}
+
+.footer-row {
+  background-color: #f8f8f8;
+  padding: 1rem 0;
+  > ul {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.6;
+    justify-content: space-around;
+    gap: 2rem;
+    > li:nth-child(3) {
+    }
+    > li:nth-child(1) {
+      text-align: center;
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 520px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 }

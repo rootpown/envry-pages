@@ -62,6 +62,7 @@ function initContent() {
   const burger = document.getElementById('burger');
   const asideBarStatus = document.querySelector('.aisde-container');
   const hideBurger = document.querySelector('.hideElements');
+
   burger.addEventListener('click', () => {
     asideBarStatus.classList.add('showContent');
   });
@@ -87,5 +88,15 @@ function initContent() {
     });
   });
 }
+
+function statusEvent() {
+  document.querySelectorAll('.icon').forEach((element) => {
+    element.addEventListener('click', () => {
+      const elem = document.querySelector('.iconsstatus');
+      elem.classList.toggle('actives');
+    });
+  });
+}
+statusEvent();
 
 initContent();

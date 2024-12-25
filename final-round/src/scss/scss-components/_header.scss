@@ -10,6 +10,9 @@
   -webkit-box-shadow: -1px 3px 0px -1px rgba(217, 255, 245, 1);
   -moz-box-shadow: -1px 3px 0px -1px rgba(217, 255, 245, 1);
 }
+.active {
+  display: block;
+}
 .header_row {
   display: flex;
   align-items: center;

@@ -108,7 +108,6 @@
         font-size: 15px;
       }
       > .button-price {
-        margin-left: 50px;
         display: flex;
         align-items: center;
         position: absolute;
@@ -128,18 +127,21 @@
   }
 
   &_table {
-    display: none;
-    background-color: #fff;
     padding: 0.4rem;
     border-radius: 1rem;
-    @media (min-width: 768px) {
-      display: block;
-    }
-    &__row {
-      width: 100%;
-      padding: 1rem 0.2rem;
 
+    &__row {
+      border-radius: 20px;
+      padding: 1rem;
+      background-color: #fff;
+
+      width: 100%;
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
       .button-price {
+        width: 130px;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -159,13 +161,13 @@
           padding: 1rem 0rem;
         }
         th:nth-child(1) {
-          width: 40%;
+          width: 60vw;
         }
         th:nth-child(2) {
-          width: 20%;
+          width: 20vw;
         }
         th:nth-child(3) {
-          width: 20%;
+          width: 20vw;
         }
       }
       > tbody {
@@ -176,7 +178,24 @@
           padding: 1rem 0rem;
         }
         td {
-          width: 20%;
+          width: 10vw;
+        }
+      }
+    }
+    &_subtitle {
+      padding: 2rem 0;
+      max-width: 420px;
+      font-size: 14px;
+      font-weight: bold;
+
+      > .subinfo {
+        max-width: 200px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 1rem;
+        @media (min-width: 768px) {
+          max-width: 420px;
         }
       }
     }

@@ -1,8 +1,8 @@
 @charset "UTF-8";
-@import "~normalize.css";
+@import '~normalize.css';
 @font-face {
-  font-family: "notosans";
-  src: url("../fonts/notosans.woff2") format("woff2");
+  font-family: 'notosans';
+  src: url('../fonts/notosans.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -27,9 +27,9 @@ html {
 body {
   overflow-anchor: none;
   margin: 0;
-  font-family: "Barlow", sans-serif;
-  color: #1B1C21;
-  background-color: #F8F8F8;
+  font-family: 'Barlow', sans-serif;
+  color: #1b1c21;
+  background-color: #f8f8f8;
   scroll-behavior: smooth;
 }
 
@@ -38,7 +38,13 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
   padding: 0;
 }
@@ -79,7 +85,7 @@ textarea:focus {
 }
 
 footer {
-  background: #1B1C21;
+  background: #1b1c21;
 }
 
 .is--hidden {
