@@ -7,7 +7,14 @@ import 'swiper/css/bundle';
 
 let swipers = [];
 let statusWidth = window.innerWidth > 767;
-
+const breakpoints = {
+  500: {
+    slidesPerView: 2,
+  },
+  768: {
+    slidesPerView: 3,
+  },
+};
 function initSwiper(className, breakpoints) {
   const elements = document.querySelectorAll(className);
   elements.forEach((element, index) => {
@@ -33,15 +40,6 @@ function initSwiper(className, breakpoints) {
     console.log(swipers);
   });
 }
-
-const breakpoints = {
-  500: {
-    slidesPerView: 2,
-  },
-  768: {
-    slidesPerView: 3,
-  },
-};
 
 window.addEventListener('resize', () => {
   statusWidth = window.innerWidth > 767;
@@ -75,7 +73,7 @@ function initContent() {
       block.classList.add('hidden');
     }
   });
-  buttons.forEach((button, buttonIndex) => {
+  buttons.forEach((button) => {
     button.addEventListener('click', () => {
       const swiperContainer = button
         .closest('.tqs_block')
@@ -90,13 +88,30 @@ function initContent() {
 }
 
 function statusEvent() {
-  document.querySelectorAll('.icon').forEach((element) => {
+  const toggleClass = (selector, targetClass) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      element.addEventListener('click', () => {
+        document.querySelector(targetClass).classList.toggle('actives');
+      });
+    });
+  };
+
+  toggleClass('.icon', '.iconsstatus');
+  toggleClass('.index-call', '.main_modal_child');
+  toggleClass('.subindex-call', '.main_modal_append');
+
+  document.querySelectorAll('.elems-index')?.forEach((element) => {
     element.addEventListener('click', () => {
-      const elem = document.querySelector('.iconsstatus');
-      elem.classList.toggle('actives');
+      document.querySelector('.main_modal_child').classList.toggle('actives');
+    });
+  });
+
+  document.querySelectorAll('.stat-index')?.forEach((element) => {
+    element.addEventListener('click', () => {
+      document.querySelector('.main_modal_append').classList.toggle('actives');
     });
   });
 }
-statusEvent();
 
+statusEvent();
 initContent();
