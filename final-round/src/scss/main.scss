@@ -52,11 +52,7 @@ img {
     content: url(../assets/swiper/icon.svg);
   }
 }
-.active {
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-}
+
 .aisde-container {
   display: none;
   &.showContent {
@@ -109,4 +105,30 @@ img {
       gap: 1rem;
     }
   }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open .main-content {
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+}
+
+.main_modal_child,
+.main_modal_append {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: none;
+}
+
+.main_modal_child.actives,
+.main_modal_append.actives {
+  display: block; /* Показываем модальные окна */
 }

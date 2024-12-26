@@ -10,7 +10,7 @@
   -webkit-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
   -moz-box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
   box-shadow: 32px 17px 31px -13px rgba(34, 60, 80, 0.26);
-
+  filter: blur(0px);
   @media (min-width: 330px) {
     width: 360px;
   }
